@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
 
-## Project info
+# GrowthRocket - Funding for App & Game Developers
 
-**URL**: https://lovable.dev/projects/7ae344de-e039-4b40-b8ff-11168bee5d40
+GrowthRocket provides fast and flexible funding for app and game developers who need capital to scale their business quickly. This modern fintech platform offers receivables financing and factoring solutions.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Fast Funding**: Get funded in days, not months
+- **Easy Onboarding**: Simple documentation process
+- **Flexible Terms**: Transparent pricing without surprises
+- **Interactive Calculator**: Instantly see your potential funding amount
+- **24/7 Support**: Expert insights and practical advice
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/7ae344de-e039-4b40-b8ff-11168bee5d40) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technical Details
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- React + TypeScript
+- TailwindCSS for styling
+- shadcn/ui component library
+- Responsive design for all device sizes
 
-## How can I deploy this project?
+## Sections
 
-Simply open [Lovable](https://lovable.dev/projects/7ae344de-e039-4b40-b8ff-11168bee5d40) and click on Share -> Publish.
+1. **Hero Section** - Introduction with primary CTAs
+2. **Why Us** - Key value propositions with visual cards
+3. **Funding Calculator** - Interactive tool to calculate financing options
+4. **Qualification Check** - Requirements for applying
+5. **How It Works** - 3-step process explanation 
+6. **Trust Indicators** - Customer testimonials and metrics
+7. **FAQ** - Common questions answered
+8. **Final CTA** - Call to action with Apply Now options
+9. **Contact Form** - Modal form for capturing leads
 
-## Can I connect a custom domain to my Lovable project?
+## Design Approach
 
-Yes, you can!
+The design uses a clean, modern fintech aesthetic with:
+- Primary blue/rocket colors for trust and reliability
+- Mint green accents for growth and positivity
+- Rounded corners and soft shadows for a friendly feel
+- Clear typographic hierarchy with the Inter font family
+- Responsive components that work across all device sizes
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Getting Started
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```

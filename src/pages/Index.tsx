@@ -1,12 +1,75 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState, useRef } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import WhyUsSection from "@/components/WhyUsSection";
+import FundingCalculator from "@/components/FundingCalculator";
+import QualifySection from "@/components/QualifySection";
+import HowItWorks from "@/components/HowItWorks";
+import TrustSection from "@/components/TrustSection";
+import FaqSection from "@/components/FaqSection";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const calculatorRef = useRef<HTMLDivElement>(null);
+
+  const openContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
+
+  const scrollToCalculator = () => {
+    calculatorRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="bg-white min-h-screen">
+      <Navbar openContactForm={openContactForm} />
+      
+      <main>
+        <HeroSection 
+          openContactForm={openContactForm} 
+          scrollToCalculator={scrollToCalculator} 
+        />
+        
+        <section id="why-us">
+          <WhyUsSection />
+        </section>
+        
+        <section id="calculator" ref={calculatorRef} className="py-12">
+          <FundingCalculator openContactForm={openContactForm} />
+        </section>
+        
+        <section id="qualify">
+          <QualifySection openContactForm={openContactForm} />
+        </section>
+        
+        <section id="how-it-works">
+          <HowItWorks />
+        </section>
+        
+        <section id="trust">
+          <TrustSection />
+        </section>
+        
+        <section id="faq">
+          <FaqSection />
+        </section>
+        
+        <section id="cta">
+          <CtaSection openContactForm={openContactForm} />
+        </section>
+      </main>
+      
+      <Footer />
+      
+      <ContactForm isOpen={isContactFormOpen} onClose={closeContactForm} />
     </div>
   );
 };

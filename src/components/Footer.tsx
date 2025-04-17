@@ -1,0 +1,90 @@
+
+import React from "react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <div className="flex items-center mb-6">
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-8 h-8 text-white mr-2" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2"
+              >
+                <path d="M12 2L4.5 9.5M12 2l7.5 7.5M12 2v8m0 0l-3-3m3 3l3-3M4.5 9.5V21l7.5-4.5 7.5 4.5V9.5M4.5 9.5L12 14m7.5-4.5L12 14" />
+              </svg>
+              <span className="text-xl font-bold text-white">GrowthRocket</span>
+            </div>
+            <p className="mb-6">
+              Fast and flexible funding for app and game developers. 
+              Get the capital you need to grow your business.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-4">
+              <li><a href="#why-us" className="hover:text-white transition">Why Us</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Calculator</a></li>
+              <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
+              <li><a href="#faq" className="hover:text-white transition">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Resources</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-white transition">Blog</a></li>
+              <li><a href="#" className="hover:text-white transition">Careers</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <Mail size={18} className="mr-2" />
+                <a href="mailto:info@growthrocket.com" className="hover:text-white transition">
+                  info@growthrocket.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="mr-2" />
+                <a href="tel:+1234567890" className="hover:text-white transition">
+                  +1 (234) 567-890
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+          <p>&copy; {new Date().getFullYear()} GrowthRocket. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
