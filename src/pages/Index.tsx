@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -11,40 +10,31 @@ import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-
 const Index = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const calculatorRef = useRef<HTMLDivElement>(null);
-
   const openContactForm = () => {
     setIsContactFormOpen(true);
   };
-
   const closeContactForm = () => {
     setIsContactFormOpen(false);
   };
-
   const scrollToCalculator = () => {
-    calculatorRef.current?.scrollIntoView({ behavior: 'smooth' });
+    calculatorRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="bg-white min-h-screen">
+  return <div className="bg-white min-h-screen">
       <Navbar openContactForm={openContactForm} />
       
       <main>
-        <HeroSection 
-          openContactForm={openContactForm} 
-          scrollToCalculator={scrollToCalculator} 
-        />
+        <HeroSection openContactForm={openContactForm} scrollToCalculator={scrollToCalculator} />
         
         <section id="why-us">
           <WhyUsSection />
         </section>
         
-        <section id="calculator" ref={calculatorRef} className="py-12">
-          <FundingCalculator openContactForm={openContactForm} />
-        </section>
+        
         
         <section id="qualify">
           <QualifySection openContactForm={openContactForm} />
@@ -70,8 +60,6 @@ const Index = () => {
       <Footer />
       
       <ContactForm isOpen={isContactFormOpen} onClose={closeContactForm} />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
