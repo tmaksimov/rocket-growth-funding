@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 interface HeroProps {
@@ -59,7 +60,7 @@ const HeroSection: React.FC<HeroProps> = ({
             value: "90%",
             label: "Max Advance Rate"
           }].map((stat, index) => <div key={index} className="text-center">
-                <div className="text-2xl md:text-4xl font-bold text-rocket-700 mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-5xl font-bold text-rocket-700 mb-2">{stat.value}</div>
                 <div className="text-gray-500">{stat.label}</div>
               </div>)}
           </div>
