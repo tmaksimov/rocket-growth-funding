@@ -1,14 +1,14 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-
 interface HeroProps {
   openContactForm: () => void;
   scrollToCalculator: () => void;
 }
-
-const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator }) => {
-  return (
-    <div className="pt-32 pb-20 md:pb-28 relative overflow-hidden">
+const HeroSection: React.FC<HeroProps> = ({
+  openContactForm,
+  scrollToCalculator
+}) => {
+  return <div className="pt-32 pb-20 md:pb-28 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 opacity-60 rounded-full blur-3xl"></div>
@@ -38,39 +38,33 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button 
-              onClick={openContactForm}
-              className="bg-blue-500 hover:bg-blue-600 text-white"
-            >
+            <Button onClick={openContactForm} className="bg-blue-500 hover:bg-blue-600 text-white text-base">
               Get Funded
             </Button>
             
-            <Button
-              onClick={scrollToCalculator}
-              variant="outline"
-              className="border-blue-500 text-blue-500 hover:bg-blue-50"
-            >
-              Try Our Calculator
-            </Button>
+            
           </div>
           
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-            {[
-              { value: "100+", label: "Funded Companies" },
-              { value: "$50M+", label: "Total Funding" },
-              { value: "3-5 Days", label: "Funding Speed" },
-              { value: "90%", label: "Max Advance Rate" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
+            {[{
+            value: "100+",
+            label: "Funded Companies"
+          }, {
+            value: "$50M+",
+            label: "Total Funding"
+          }, {
+            value: "3-5 Days",
+            label: "Funding Speed"
+          }, {
+            value: "90%",
+            label: "Max Advance Rate"
+          }].map((stat, index) => <div key={index} className="text-center">
                 <div className="text-2xl md:text-4xl font-bold text-rocket-700 mb-2">{stat.value}</div>
                 <div className="text-gray-500">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
