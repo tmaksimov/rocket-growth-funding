@@ -38,19 +38,17 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
+            <Button 
               onClick={openContactForm}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full"
-              size="lg"
+              className="bg-blue-500 hover:bg-blue-600 text-white"
             >
-              Get Funded!
+              Get Funded
             </Button>
             
             <Button
               onClick={scrollToCalculator}
               variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-full border-2"
-              size="lg"
+              className="border-blue-500 text-blue-500 hover:bg-blue-50"
             >
               Try Our Calculator
             </Button>
