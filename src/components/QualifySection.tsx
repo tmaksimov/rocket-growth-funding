@@ -1,9 +1,16 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useState, useEffect } from "react";
+
 interface QualifyProps {
   openContactForm: () => void;
 }
+
 const QualifySection: React.FC<QualifyProps> = ({
   openContactForm
 }) => {
@@ -24,6 +31,76 @@ const QualifySection: React.FC<QualifyProps> = ({
     name: "AppLovin",
     logo: "applovin"
   }];
+
+  // State for calculator
+  const [amount, setAmount] = useState<string>("10000");
+  const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
+  const [totalFactoringFee, setTotalFactoringFee] = useState<number>(0);
+  const [cashCost, setCashCost] = useState<number>(0);
+
+  // Calculate payments based on new logic
+  useEffect(() => {
+    const amountNum = parseFloat(amount.replace(/,/g, '')) || 0;
+    
+    // Fixed term of 3 months and monthly factoring fee of 1.85%
+    const monthlyFactoringFee = 0.0185;
+    const termMonths = 3;
+    
+    // Calculate payment schedule
+    const schedule = [];
+    let totalFee = 0;
+    const startDate = new Date(2025, 0, 1); // January 1, 2025
+    
+    // Initial financing: amount is advanced on January 1
+    // Repayment schedule:
+    // 50% after 1 month (February 1)
+    // 25% after 2 months (March 1)
+    // 25% after 3 months (April 1)
+    
+    const paymentPercentages = [0.5, 0.25, 0.25];
+    let remainingAmount = amountNum;
+    
+    for (let i = 0; i < termMonths; i++) {
+      const paymentDate = new Date(startDate);
+      paymentDate.setMonth(paymentDate.getMonth() + i + 1);
+      
+      const paymentAmount = amountNum * paymentPercentages[i];
+      remainingAmount -= paymentAmount;
+      
+      // Calculate factoring fee based on the outstanding amount for this period
+      const feeAmount = amountNum * (i === 0 ? 1 : (1 - paymentPercentages.slice(0, i).reduce((a, b) => a + b, 0))) * monthlyFactoringFee;
+      totalFee += feeAmount;
+      
+      schedule.push({
+        date: paymentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+        amount: paymentAmount,
+        percentage: paymentPercentages[i] * 100,
+        factoring_fee: feeAmount
+      });
+    }
+    
+    // Calculate cash cost percentage
+    const cashCostPercent = (totalFee / amountNum) * 100;
+    
+    setPaymentSchedule(schedule);
+    setTotalFactoringFee(totalFee);
+    setCashCost(cashCostPercent);
+  }, [amount]);
+
+  const formatNumber = (num: number): string => {
+    return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  };
+
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    if (value) {
+      const formatted = parseInt(value).toLocaleString('en-US');
+      setAmount(formatted);
+    } else {
+      setAmount('');
+    }
+  };
+
   return <div className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -51,43 +128,61 @@ const QualifySection: React.FC<QualifyProps> = ({
                   </div>)}
               </div>
             </div>
-            
-            
           </div>
           
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
             <div className="mb-6">
               <div className="inline-block bg-mint-100 text-mint-700 rounded-full px-4 py-1 text-sm font-medium mb-4">
-                RECEIVABLES FUNDING
+                FUNDING CALCULATOR
               </div>
-              <h3 className="text-2xl font-bold mb-2">Take control of your cash flow</h3>
-              <p className="text-gray-600">
-                Get immediate access to your future receivables and reinvest in growth.
+              <h3 className="text-2xl font-bold mb-2">Calculate your funding</h3>
+              <p className="text-gray-600 mb-6">
+                See how our 3-month funding solution can work for your business
               </p>
             </div>
             
             <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="text-sm text-gray-500 mb-1">Monthly Revenue</div>
-                  <div className="text-2xl font-bold">$30K - $1M+</div>
+              <div className="space-y-2">
+                <Label htmlFor="amount">Amount to be financed</Label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                  <Input 
+                    id="amount"
+                    value={amount}
+                    onChange={handleAmountChange}
+                    className="pl-8"
+                  />
                 </div>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="text-sm text-gray-500 mb-1">Advance Rate</div>
-                  <div className="text-2xl font-bold">Up to 90%</div>
-                </div>
+                <p className="text-sm text-gray-500">Term: 3 months</p>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="text-sm text-gray-500 mb-1">Funding Speed</div>
-                  <div className="text-2xl font-bold">3-5 Days</div>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <div className="text-sm text-gray-500 mb-1">Terms</div>
-                  <div className="text-2xl font-bold">Flexible</div>
-                </div>
-              </div>
+              <Card className="bg-gray-50 border-none">
+                <CardContent className="pt-6">
+                  <h4 className="font-semibold mb-4">Payment Schedule:</h4>
+                  <div className="space-y-3">
+                    {paymentSchedule.map((payment, index) => (
+                      <div key={index} className="flex justify-between items-center">
+                        <div>
+                          <div className="font-medium">{payment.date}</div>
+                          <div className="text-sm text-gray-500">{payment.percentage}% of principal</div>
+                        </div>
+                        <div className="font-semibold">${formatNumber(payment.amount)}</div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium">Total Factoring Fee:</span>
+                      <span className="font-bold">${formatNumber(totalFactoringFee)}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Cash Cost:</span>
+                      <span className="font-bold">{formatNumber(cashCost)}%</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
               
               <Button onClick={openContactForm} className="w-full bg-mint-500 hover:bg-mint-600 text-white">
                 Apply Now
@@ -98,4 +193,5 @@ const QualifySection: React.FC<QualifyProps> = ({
       </div>
     </div>;
 };
+
 export default QualifySection;

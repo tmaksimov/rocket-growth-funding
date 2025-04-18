@@ -21,6 +21,12 @@ const HowItWorks = () => {
       title: "Review your proposal",
       description: "Transparent terms – fast decisions. You'll receive an unbeatable personalized offer.",
       color: "bg-blue-500"
+    },
+    {
+      number: "04",
+      title: "Get funds",
+      description: "Once approved, funds are transferred to your account within 3-5 business days, ready for you to grow your business.",
+      color: "bg-rocket-700"
     }
   ];
 
@@ -30,7 +36,7 @@ const HowItWorks = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A simple three-step process to get you funded quickly
+            A simple four-step process to get you funded quickly
           </p>
         </div>
         

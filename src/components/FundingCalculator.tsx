@@ -1,9 +1,9 @@
+
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface CalculatorProps {
   openContactForm: () => void;
@@ -11,35 +11,58 @@ interface CalculatorProps {
 
 const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
   const [amount, setAmount] = useState<string>("10000");
-  const [payoutDelay, setPayoutDelay] = useState<number>(30);
-  const [advanceRate, setAdvanceRate] = useState<number>(85);
-  const [factoringFee, setFactoringFee] = useState<number>(0);
-  const [advancePayment, setAdvancePayment] = useState<number>(0);
+  const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
+  const [totalFactoringFee, setTotalFactoringFee] = useState<number>(0);
+  const [cashCost, setCashCost] = useState<number>(0);
 
+  // Calculate payments based on new logic
   useEffect(() => {
     const amountNum = parseFloat(amount.replace(/,/g, '')) || 0;
     
-    let fee = 0;
-    if (payoutDelay === 30) {
-      fee = amountNum * 0.04;
-    } else if (payoutDelay === 45) {
-      fee = amountNum * 0.06;
-    } else if (payoutDelay === 60) {
-      fee = amountNum * 0.08;
+    // Fixed term of 3 months and monthly factoring fee of 1.85%
+    const monthlyFactoringFee = 0.0185;
+    const termMonths = 3;
+    
+    // Calculate payment schedule
+    const schedule = [];
+    let totalFee = 0;
+    const startDate = new Date(2025, 0, 1); // January 1, 2025
+    
+    // Initial financing: amount is advanced on January 1
+    // Repayment schedule:
+    // 50% after 1 month (February 1)
+    // 25% after 2 months (March 1)
+    // 25% after 3 months (April 1)
+    
+    const paymentPercentages = [0.5, 0.25, 0.25];
+    let remainingAmount = amountNum;
+    
+    for (let i = 0; i < termMonths; i++) {
+      const paymentDate = new Date(startDate);
+      paymentDate.setMonth(paymentDate.getMonth() + i + 1);
+      
+      const paymentAmount = amountNum * paymentPercentages[i];
+      remainingAmount -= paymentAmount;
+      
+      // Calculate factoring fee based on the outstanding amount for this period
+      const feeAmount = amountNum * (i === 0 ? 1 : (1 - paymentPercentages.slice(0, i).reduce((a, b) => a + b, 0))) * monthlyFactoringFee;
+      totalFee += feeAmount;
+      
+      schedule.push({
+        date: paymentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+        amount: paymentAmount,
+        percentage: paymentPercentages[i] * 100,
+        factoring_fee: feeAmount
+      });
     }
     
-    let rate = 85;
-    if (amountNum > 50000) {
-      rate = 87;
-    }
-    if (amountNum > 100000) {
-      rate = 90;
-    }
+    // Calculate cash cost percentage
+    const cashCostPercent = (totalFee / amountNum) * 100;
     
-    setAdvanceRate(rate);
-    setFactoringFee(fee);
-    setAdvancePayment((amountNum * rate / 100) - fee);
-  }, [amount, payoutDelay]);
+    setPaymentSchedule(schedule);
+    setTotalFactoringFee(totalFee);
+    setCashCost(cashCostPercent);
+  }, [amount]);
 
   const formatNumber = (num: number): string => {
     return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
@@ -72,55 +95,49 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
         
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl">Get your receivables funded</CardTitle>
+            <CardTitle className="text-2xl">Calculate your funding</CardTitle>
             <CardDescription>
-              Calculate your advance payment based on your receivables
+              See how our 3-month funding solution can work for your business
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid gap-6">
               <div className="space-y-2">
-                <Label htmlFor="amount">Amount</Label>
+                <Label htmlFor="calculator-amount">Amount to be financed</Label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                   <Input 
-                    id="amount"
+                    id="calculator-amount"
                     value={amount}
                     onChange={handleAmountChange}
                     className="pl-8"
                   />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label>Expected payout delay</Label>
-                <Tabs defaultValue="30" onValueChange={(value) => setPayoutDelay(parseInt(value))}>
-                  <TabsList className="grid grid-cols-3 w-full">
-                    <TabsTrigger value="30">30 days</TabsTrigger>
-                    <TabsTrigger value="45">45 days</TabsTrigger>
-                    <TabsTrigger value="60">60 days</TabsTrigger>
-                  </TabsList>
-                </Tabs>
+                <p className="text-sm text-gray-500">Term: 3 months</p>
               </div>
               
               <div className="border-t border-gray-200 my-4 pt-4">
-                <h4 className="font-medium text-lg mb-4">Your funding details:</h4>
+                <h4 className="font-medium text-lg mb-4">Payment Schedule:</h4>
                 <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Receivable amount:</span>
-                    <span className="font-semibold">${amount || '0'}</span>
+                  {paymentSchedule.map((payment, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <div>
+                        <div className="font-medium">{payment.date}</div>
+                        <div className="text-sm text-gray-500">{payment.percentage}% of principal</div>
+                      </div>
+                      <div className="font-semibold">${formatNumber(payment.amount)}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-gray-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium">Total Factoring Fee:</span>
+                    <span className="font-bold">${formatNumber(totalFactoringFee)}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Advance rate:</span>
-                    <span className="font-semibold">{advanceRate}%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Factoring fee:</span>
-                    <span className="font-semibold">${formatNumber(factoringFee)}</span>
-                  </div>
-                  <div className="flex justify-between text-lg font-bold">
-                    <span>Advance payment:</span>
-                    <span className="text-rocket-700">${formatNumber(advancePayment)}</span>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Cash Cost:</span>
+                    <span className="font-bold">{formatNumber(cashCost)}%</span>
                   </div>
                 </div>
               </div>
@@ -131,12 +148,6 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
               >
                 Get Funded Now
               </Button>
-              
-              <div className="text-center">
-                <a href="#" className="text-blue-600 hover:text-blue-800 text-sm underline">
-                  Compare with your current offer
-                </a>
-              </div>
             </div>
           </CardContent>
         </Card>
