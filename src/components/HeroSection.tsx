@@ -47,16 +47,16 @@ const HeroSection: React.FC<HeroProps> = ({
           
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             {[{
-            value: "100+",
+            value: "20+",
             label: "Funded Companies"
           }, {
-            value: "$50M+",
+            value: "$15M+",
             label: "Total Funding"
           }, {
             value: "3-5 Days",
             label: "Funding Speed"
           }, {
-            value: "90%",
+            value: "95%",
             label: "Max Advance Rate"
           }].map((stat, index) => <div key={index} className="text-center">
                 <div className="text-2xl md:text-4xl font-bold text-rocket-700 mb-2">{stat.value}</div>
