@@ -4,17 +4,14 @@ import { Quote } from "lucide-react";
 const TrustSection = () => {
   const testimonials = [{
     quote: "GrowthRocket helped us close our funding gap and scale our user acquisition faster than we thought possible.",
-    author: "Jane Smith",
-    company: "JetSHR",
+    company: "Jet",
     url: "https://jetshr.com/"
   }, {
     quote: "Their funding model perfectly aligned with our app's revenue cycles. No more waiting months for store payouts.",
-    author: "Michael Johnson",
     company: "Twinby",
     url: "https://twinby.com/"
   }, {
     quote: "Working with GrowthRocket felt like having a financial partner rather than just a funding source.",
-    author: "Sarah Williams",
     company: "Dwelly Group",
     url: "https://dwelly.group"
   }];
