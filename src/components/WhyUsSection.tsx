@@ -34,31 +34,31 @@ const WhyUsSection = () => {
     {
       icon: Rocket,
       title: "Fast Funding",
-      description: "Get funded in days, not months. Quick decisions when you need them most.",
+      description: "Get funded in days, not months.",
       color: "bg-gradient-to-br from-rocket-50 to-rocket-100",
     },
     {
       icon: CheckCircle,
       title: "Easy to Start",
-      description: "Simple onboarding with essential documentation you can quickly provide.",
+      description: "Simple and quick onboarding.",
       color: "bg-gradient-to-br from-mint-50 to-mint-100",
     },
     {
       icon: Headphones,
       title: "24/7 Hands-on Support",
-      description: "Beyond funding, our team provides expert insights in marketing and financial strategy.",
+      description: "Support That Starts — and Stays.",
       color: "bg-gradient-to-br from-blue-50 to-blue-100",
     },
     {
       icon: Shield,
       title: "Data Privacy",
-      description: "We do not use your data for anything other than funding decisions, unlike other competitors.",
+      description: "We do not use or share your data. Never.",
       color: "bg-gradient-to-br from-purple-50 to-purple-100",
     },
     {
       icon: PercentCircle,
       title: "Flexible Terms",
-      description: "Transparent pricing without surprises and unbeatable terms that fit your business.",
+      description: "Transparent and unbeatable pricing without surprises.",
       color: "bg-gradient-to-br from-emerald-50 to-emerald-100",
     },
   ];
