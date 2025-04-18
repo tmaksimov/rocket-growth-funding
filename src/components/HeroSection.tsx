@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 
@@ -50,7 +49,7 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
             <Button
               onClick={scrollToCalculator}
               variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-full"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-full border-2"
               size="lg"
             >
               Try Our Calculator
