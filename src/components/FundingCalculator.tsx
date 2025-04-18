@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,11 +16,9 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
   const [factoringFee, setFactoringFee] = useState<number>(0);
   const [advancePayment, setAdvancePayment] = useState<number>(0);
 
-  // Calculate the fees and advance payment
   useEffect(() => {
     const amountNum = parseFloat(amount.replace(/,/g, '')) || 0;
     
-    // Calculate factoring fee based on payout delay
     let fee = 0;
     if (payoutDelay === 30) {
       fee = amountNum * 0.04;
@@ -31,7 +28,6 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
       fee = amountNum * 0.08;
     }
     
-    // Calculate advance rate based on amount
     let rate = 85;
     if (amountNum > 50000) {
       rate = 87;
@@ -45,14 +41,11 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
     setAdvancePayment((amountNum * rate / 100) - fee);
   }, [amount, payoutDelay]);
 
-  // Format number with commas
   const formatNumber = (num: number): string => {
     return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
   };
 
-  // Handle input change with formatting
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Remove non-numeric characters and format with commas
     const value = e.target.value.replace(/[^0-9]/g, '');
     if (value) {
       const formatted = parseInt(value).toLocaleString('en-US');
@@ -64,9 +57,9 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <div className="bg-gradient-to-r from-rocket-50 to-mint-50 rounded-3xl p-6 md:p-8">
+      <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-3xl p-6 md:p-8">
         <div className="text-center mb-8">
-          <div className="inline-block bg-rocket-600 text-white rounded-full px-4 py-1 text-sm font-medium mb-4">
+          <div className="inline-block bg-blue-600 text-white rounded-full px-4 py-1 text-sm font-medium mb-4">
             GET YOUR RECEIVABLES FUNDED
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
@@ -134,13 +127,13 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
               
               <Button 
                 onClick={openContactForm}
-                className="w-full bg-mint-500 hover:bg-mint-600 text-white"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white"
               >
                 Get Funded Now
               </Button>
               
               <div className="text-center">
-                <a href="#" className="text-rocket-600 hover:text-rocket-800 text-sm underline">
+                <a href="#" className="text-blue-600 hover:text-blue-800 text-sm underline">
                   Compare with your current offer
                 </a>
               </div>

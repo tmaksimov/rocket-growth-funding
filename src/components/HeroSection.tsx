@@ -12,8 +12,8 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
     <div className="pt-32 pb-20 md:pb-28 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-mint-100 opacity-60 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 -left-48 w-96 h-96 bg-rocket-100 opacity-60 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 opacity-60 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 -left-48 w-96 h-96 bg-blue-100 opacity-60 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-blue-100 opacity-60 rounded-full blur-3xl"></div>
         
         {/* Code/numbers background elements */}
@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rocket-700 to-mint-700">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-700">
             Fast and Flexible Funding for Your App or Game
           </h1>
           
@@ -41,7 +41,7 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               onClick={openContactForm}
-              className="bg-rocket-600 hover:bg-rocket-700 text-white px-8 py-6 text-lg rounded-full"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full"
               size="lg"
             >
               Get Funded!
@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroProps> = ({ openContactForm, scrollToCalculator 
             <Button
               onClick={scrollToCalculator}
               variant="outline"
-              className="border-rocket-600 text-rocket-600 hover:bg-rocket-50 px-8 py-6 text-lg rounded-full"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-full"
               size="lg"
             >
               Try Our Calculator

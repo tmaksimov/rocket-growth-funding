@@ -8,7 +8,7 @@ interface CtaProps {
 
 const CtaSection: React.FC<CtaProps> = ({ openContactForm }) => {
   return (
-    <div className="py-20 bg-gradient-to-r from-rocket-600 to-mint-600 text-white">
+    <div className="py-20 bg-gradient-to-r from-rocket-600 to-blue-600 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Ready to Supercharge Your Growth?
@@ -20,7 +20,7 @@ const CtaSection: React.FC<CtaProps> = ({ openContactForm }) => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
             onClick={openContactForm}
-            className="bg-white text-rocket-700 hover:bg-gray-100 hover:text-rocket-800 px-8 py-6 text-lg"
+            className="bg-white text-blue-700 hover:bg-gray-100 hover:text-blue-800 px-8 py-6 text-lg"
             size="lg"
           >
             Apply Now
@@ -29,7 +29,7 @@ const CtaSection: React.FC<CtaProps> = ({ openContactForm }) => {
           <Button
             onClick={openContactForm}
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-rocket-700 px-8 py-6 text-lg"
+            className="border-white text-white hover:bg-white hover:text-blue-700 px-8 py-6 text-lg"
             size="lg"
           >
             Speak with Our Team

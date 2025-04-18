@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,14 +12,14 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
           <a href="/" className="flex items-center gap-2">
             <svg 
               viewBox="0 0 24 24" 
-              className="w-8 h-8 text-rocket-600" 
+              className="w-8 h-8 text-blue-600" 
               fill="none" 
               stroke="currentColor" 
               strokeWidth="2"
             >
               <path d="M12 2L4.5 9.5M12 2l7.5 7.5M12 2v8m0 0l-3-3m3 3l3-3M4.5 9.5V21l7.5-4.5 7.5 4.5V9.5M4.5 9.5L12 14m7.5-4.5L12 14" />
             </svg>
-            <span className="text-xl font-bold text-rocket-800">GrowthRocket</span>
+            <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
           </a>
         </div>
         
@@ -34,7 +33,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
         <div className="hidden md:block">
           <Button 
             onClick={openContactForm}
-            className="bg-mint-500 hover:bg-mint-600 text-white"
+            className="bg-blue-500 hover:bg-blue-600 text-white"
           >
             Get Funded
           </Button>
@@ -48,7 +47,6 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
         </button>
       </div>
       
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white py-4 px-4 shadow-md">
           <nav className="flex flex-col space-y-4">
@@ -85,7 +83,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
                 openContactForm();
                 setIsMenuOpen(false);
               }}
-              className="bg-mint-500 hover:bg-mint-600 text-white w-full"
+              className="bg-blue-500 hover:bg-blue-600 text-white w-full"
             >
               Get Funded
             </Button>
