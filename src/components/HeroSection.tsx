@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroProps> = ({
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button onClick={openContactForm} className="bg-blue-500 hover:bg-blue-700 text-white font-normal text-lg rounded-none">
+            <Button onClick={openContactForm} className="bg-blue-500 hover:bg-blue-600 text-white font-normal text-lg rounded-none">
               Get Funded
             </Button>
             
