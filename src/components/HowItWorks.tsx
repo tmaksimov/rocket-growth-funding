@@ -25,7 +25,7 @@ const HowItWorks = () => {
     {
       number: "04",
       title: "Get funds",
-      description: "Once approved, funds are transferred to your account within 3-5 business days, ready for you to grow your business.",
+      description: "Once approved, funds are transferred to your account within days, ready for you to grow your business.",
       color: "bg-rocket-700"
     }
   ];
