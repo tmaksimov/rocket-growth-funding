@@ -1,66 +1,58 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-
 interface QualifyProps {
   openContactForm: () => void;
 }
-
-const QualifySection: React.FC<QualifyProps> = ({ openContactForm }) => {
-  const requirements = [
-    "Revenue from $30K/month",
-    "Minimum 6 months of operations",
-    "Available receivables in any platform"
-  ];
-  
-  const platforms = [
-    { name: "Apple App Store", logo: "apple" },
-    { name: "Google Play", logo: "google-play" },
-    { name: "Unity Ads", logo: "unity" },
-    { name: "Meta", logo: "meta" },
-    { name: "AppLovin", logo: "applovin" },
-  ];
-
-  return (
-    <div className="py-16 bg-gray-50">
+const QualifySection: React.FC<QualifyProps> = ({
+  openContactForm
+}) => {
+  const requirements = ["Revenue from $30K/month", "Minimum 6 months of operations", "Available receivables in any platform"];
+  const platforms = [{
+    name: "Apple App Store",
+    logo: "apple"
+  }, {
+    name: "Google Play",
+    logo: "google-play"
+  }, {
+    name: "Unity Ads",
+    logo: "unity"
+  }, {
+    name: "Meta",
+    logo: "meta"
+  }, {
+    name: "AppLovin",
+    logo: "applovin"
+  }];
+  return <div className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Who Can Apply?</h2>
             
             <div className="space-y-4 mb-8">
-              {requirements.map((req, index) => (
-                <div key={index} className="flex items-start">
+              {requirements.map((req, index) => <div key={index} className="flex items-start">
                   <span className="flex-shrink-0 mr-3 mt-1 bg-mint-100 rounded-full p-1">
                     <Check className="h-4 w-4 text-mint-600" />
                   </span>
                   <span className="text-lg">{req}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4">Supported Platforms:</h3>
               <div className="flex flex-wrap gap-4">
-                {platforms.map((platform, index) => (
-                  <div key={index} className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                {platforms.map((platform, index) => <div key={index} className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
                     <div className="w-6 h-6 flex items-center justify-center mr-2">
                       {/* Simplified logo placeholders */}
                       <div className="w-4 h-4 rounded-full bg-gray-300"></div>
                     </div>
                     <span className="text-sm font-medium">{platform.name}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
-            <Button
-              onClick={openContactForm}
-              className="bg-rocket-600 hover:bg-rocket-700 text-white"
-            >
-              Check If You Qualify
-            </Button>
+            
           </div>
           
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -97,18 +89,13 @@ const QualifySection: React.FC<QualifyProps> = ({ openContactForm }) => {
                 </div>
               </div>
               
-              <Button 
-                onClick={openContactForm}
-                className="w-full bg-mint-500 hover:bg-mint-600 text-white"
-              >
+              <Button onClick={openContactForm} className="w-full bg-mint-500 hover:bg-mint-600 text-white">
                 Apply Now
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default QualifySection;
