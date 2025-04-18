@@ -1,21 +1,12 @@
-
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-gray-300">
+  return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <svg 
-                viewBox="0 0 24 24" 
-                className="w-8 h-8 text-white mr-2" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2"
-              >
+              <svg viewBox="0 0 24 24" className="w-8 h-8 text-white mr-2" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L4.5 9.5M12 2l7.5 7.5M12 2v8m0 0l-3-3m3 3l3-3M4.5 9.5V21l7.5-4.5 7.5 4.5V9.5M4.5 9.5L12 14m7.5-4.5L12 14" />
               </svg>
               <span className="text-xl font-bold text-white">GrowthRocket</span>
@@ -26,13 +17,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram size={20} />
+                
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <Linkedin size={20} />
@@ -70,10 +61,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="mr-2" />
-                <a href="tel:+1234567890" className="hover:text-white transition">
-                  +1 (234) 567-890
-                </a>
+                
+                
               </li>
             </ul>
           </div>
@@ -83,8 +72,6 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} GrowthRocket. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
