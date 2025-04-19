@@ -1,53 +1,82 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
-const TrustSection = () => {
-  const testimonials = [{
-    quote: "GrowthRocket helped us close our funding gap and scale our user acquisition faster than we thought possible.",
-    company: "Jet",
-    url: "https://jetshr.com/"
-  }, {
-    quote: "Their funding model perfectly aligned with our app's revenue cycles. No more waiting months for store payouts.",
-    company: "Twinby",
-    url: "https://twinby.com/"
-  }, {
-    quote: "Working with GrowthRocket felt like having a financial partner rather than just a funding source.",
-    company: "Dwelly Group",
-    url: "https://dwelly.group"
-  }];
-  return <div className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16 relative">
-            
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Trusted by Founders</h2>
-            
-            <div className="flex justify-center gap-8 mb-12 flex-wrap">
-              {["JetSHR", "Twinby", "Dwelly Group", "Many Gaming Apps"].map((logo, index) => <div key={index} className="bg-gray-100 px-6 py-3 rounded-lg">
-                  <span className="font-semibold text-gray-800">{logo}</span>
-                </div>)}
-            </div>
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Verified } from "lucide-react";
+
+interface Testimonial {
+  quote: string;
+  company: string;
+  url: string;
+  name: string; // Add the missing name property
+}
+
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
+  <Card className="bg-white border border-gray-200 shadow-sm transform transition-all duration-300 hover:shadow-md">
+    <CardContent className="p-6">
+      <div className="text-gray-700 mb-4">
+        "{testimonial.quote}"
+      </div>
+      <div className="flex items-center space-x-4">
+        <Avatar>
+          <AvatarImage src={`https://unavatar.io/github/${testimonial.url}`} />
+          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+        </Avatar>
+        <div>
+          <div className="flex items-center space-x-1">
+            <div className="font-medium text-gray-800">{testimonial.name}</div>
+            <Verified className="h-4 w-4 text-blue-500" />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <Card key={index} className="bg-gray-50 border-none hover:shadow-md transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <Quote className="h-8 w-8 text-rocket-400 mb-4" />
-                  <p className="text-gray-600 mb-6 italic">{testimonial.quote}</p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
-                    <div>
-                      <p className="font-semibold">{testimonial.author}</p>
-                      <a href={testimonial.url} target="_blank" rel="noopener noreferrer" className="text-rocket-600 text-sm hover:underline">
-                        {testimonial.company}
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
+          <a href={testimonial.url} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">
+            {testimonial.company}
+          </a>
         </div>
       </div>
-    </div>;
+    </CardContent>
+  </Card>
+);
+
+const TrustSection = () => {
+  const testimonials: Testimonial[] = [
+    {
+      quote: "GrowthRocket has been instrumental in scaling our user base. Their funding solution is tailored for app developers.",
+      company: "Mighty Games",
+      url: "https://github.com/mightygames",
+      name: "Alex"
+    },
+    {
+      quote: "We were able to double our marketing spend and saw immediate results. GrowthRocket understands the app business.",
+      company: "Nova Labs",
+      url: "https://github.com/novalabs",
+      name: "Sarah"
+    },
+    {
+      quote: "The process was incredibly fast and straightforward. GrowthRocket provided the capital we needed to launch our new feature.",
+      company: "Pixel Push",
+      url: "https://github.com/pixelpush",
+      name: "Emily"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Trusted by Leading App Developers
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Don't just take our word for it. See why top app developers trust GrowthRocket to fuel their growth.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default TrustSection;

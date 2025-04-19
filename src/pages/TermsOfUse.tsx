@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,7 +14,7 @@ const TermsOfUse = () => {
           
           <p>Welcome to https://growthrocket.io (the "Website"), operated by GrowthRocket.io Limited ("Company", "we", "our", or "us"), a private limited company incorporated in the Republic of Cyprus.</p>
           
-          <p>These Terms of Use (the “Terms”) govern your access to and use of the Website, our platform, and all related services offered through it (collectively, the “Services”). Please read them carefully.</p>
+          <p>These Terms of Use (the "Terms") govern your access to and use of the Website, our platform, and all related services offered through it (collectively, the "Services"). Please read them carefully.</p>
 
           <p>By accessing or using the Website, you agree to comply with and be bound by these Terms and our Privacy Policy, which is incorporated by reference. If you do not agree to these Terms, you must not use the Website or Services.</p>
 
@@ -53,7 +54,7 @@ const TermsOfUse = () => {
 
           <p>Impersonate any person or entity;</p>
 
-          <p>Disrupt or interfere with the Website’s functionality;</p>
+          <p>Disrupt or interfere with the Website's functionality;</p>
 
           <p>Introduce malware or harmful code;</p>
 
@@ -79,7 +80,7 @@ const TermsOfUse = () => {
           <p>Your use of the Website is also governed by our Privacy Policy, which describes how we collect, use, and protect your personal data, in accordance with the EU General Data Protection Regulation (GDPR).</p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">10. Disclaimer of Warranties</h2>
-          <p>The Website and Services are provided “as is” and “as available.” We do not guarantee that the Website will be secure, error-free, or uninterrupted. To the maximum extent allowed by law, we disclaim all warranties, express or implied.</p>
+          <p>The Website and Services are provided "as is" and "as available." We do not guarantee that the Website will be secure, error-free, or uninterrupted. To the maximum extent allowed by law, we disclaim all warranties, express or implied.</p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">11. Limitation of Liability</h2>
           <p>To the extent permitted by law, we will not be liable for any indirect, incidental, or consequential damages arising from:</p>
