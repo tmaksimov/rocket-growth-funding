@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhyUsSection from "@/components/WhyUsSection";
-import FundingCalculator from "@/components/FundingCalculator";
+import CommonUses from "@/components/CommonUses";
 import QualifySection from "@/components/QualifySection";
 import HowItWorks from "@/components/HowItWorks";
 import TrustSection from "@/components/TrustSection";
@@ -10,21 +10,27 @@ import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+
 const Index = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const calculatorRef = useRef<HTMLDivElement>(null);
+
   const openContactForm = () => {
     setIsContactFormOpen(true);
   };
+
   const closeContactForm = () => {
     setIsContactFormOpen(false);
   };
+
   const scrollToCalculator = () => {
     calculatorRef.current?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  return <div className="bg-white min-h-screen">
+
+  return (
+    <div className="bg-white min-h-screen">
       <Navbar openContactForm={openContactForm} />
       
       <main>
@@ -34,11 +40,11 @@ const Index = () => {
           <WhyUsSection />
         </section>
         
-        
-        
         <section id="qualify">
           <QualifySection openContactForm={openContactForm} />
         </section>
+        
+        <CommonUses />
         
         <section id="how-it-works">
           <HowItWorks />
@@ -60,6 +66,8 @@ const Index = () => {
       <Footer />
       
       <ContactForm isOpen={isContactFormOpen} onClose={closeContactForm} />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;

@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Accordion,
@@ -10,48 +9,44 @@ import {
 const FaqSection = () => {
   const faqs = [
     {
-      question: "What kind of companies do you finance?",
-      answer: "We work with mobile apps, games, SaaS, and subscription-based businesses that generate at least $30K in monthly revenue (MRR), have an active bank account, and receive payments from platforms like Apple, Google, or ad networks."
+      question: "What is GrowthRocket?",
+      answer: "GrowthRocket is a fintech platform delivering embedded capital solutions for developers of mobile apps, games, and subscription-based businesses. We connect directly to real-time revenue sources like Stripe, Apple, Google, and ad networks—making funding decisions seamless, fast, and data-driven."
     },
     {
-      question: "How fast can I get funded?",
-      answer: "Once your data is connected and onboarding is complete, funding can happen in as little as 3-5 business days."
+      question: "Why should I use your funding?",
+      answer: "We're founders too — we understand the cashflow pain. No equity. No delays. No BS. Just fast, predictable capital. Our capital directly into your platform gives your users fast, frictionless access to funding exactly where they operate. It drives higher retention, improves user satisfaction, and helps your customers grow revenue and increase payment volume—all while generating a new revenue stream for you."
     },
     {
-      question: "What documents do I need to get the funding?",
-      answer: "Just the essentials — your app's store and ad network revenue reports (e.g. App Store, Google Play, Unity Ads), a bank account statement, and company registration details. No complex financials or investor decks required."
+      question: "Am I eligible for funding?",
+      answer: "We fund mobile apps, games, and subscription businesses with at least $30K/month in revenue from the App Store, Google Play, most of the AdNetworks, or Stripe/RevenueCat, if you have good B2B contracts that have a payment delay - that works well too."
     },
     {
-      question: "How is the funding structured?",
-      answer: "We fund you based on a factoring agreement, where we buy receivables already earned. You can draw down capital flexibly, and repayment terms are adapted to your cash flow — no fixed monthly payments."
+      question: "How much capital can users access?",
+      answer: "We offer limits up to 5x of your average monthly revenue and up to 95% of confirmed receivables. You can draw as much or as little as you need within that limit."
     },
     {
-      question: "When do I pay the commission?",
-      answer: "Our fees are usually deducted automatically from the payouts you receive — so you don't need to worry about managing invoices or manual payments."
+      question: "How is GrowthRocket different from banks or traditional lenders?",
+      answer: "✅ No credit checks\n✅ No collaterals\n✅ Fully automated decisions\n✅ Revenue-based repayment (flexible cash flows)\n✅ Fast payouts\n✅ Works natively with App Store, Google Play, ad networks, and analytics tools"
     },
     {
-      question: "Do you request collateral, guarantees, or pledge of shares?",
-      answer: "No. We do not require any personal guarantees, pledges, or collateral. Our financing is based solely on business performance and expected receivables."
+      question: "When will I receive my funding?",
+      answer: "In most cases, we fund within 24 hours after onboarding and verification."
     },
     {
-      question: "Do you provide monthly reports for accounting?",
-      answer: "Yes. You receive monthly statements showing funding activity, outstanding balances, and fee breakdowns — perfect for accounting and financial planning."
+      question: "How do repayments work?",
+      answer: "Repayments are based on your receivables. We get paid everytime you store pays you."
     },
     {
-      question: "Will I lose ownership or control?",
-      answer: "No. Our model is 100% non-dilutive. You keep full ownership and make all decisions — we're here to support your strategy, not control it."
+      question: "How do I apply for funding?",
+      answer: "Use our funding calculator to see your offer. If it looks good, book a call with us, submit your app data and get funded."
     },
     {
-      question: "What's the difference between RocketGrowth and traditional financing?",
-      answer: "Traditional loans are slow, rigid, and often require guarantees or collateral. VC comes with dilution and long timelines. GrowthRocket is fast, flexible, and built around the way modern apps operate."
+      question: "What support is available?",
+      answer: "Each partner is assigned a Manager to assist with onboarding, repayment tracking, and renewals."
     },
     {
       question: "Do you support companies outside the US/EU?",
-      answer: "We primarily work with companies incorporated in the US, EU, UK, and selected other regions. Let's discuss your case if you're outside that scope."
-    },
-    {
-      question: "Are you a lender or VC?",
-      answer: "Neither. We provide non-dilutive, performance-based financing through receivables management and marketing co-investment. No equity taken. No long-term debt."
+      answer: "Yes. We primarily work with companies incorporated in the US, EU, UK, and selected other regions. Let's discuss your case if you're outside that scope."
     }
   ];
 
