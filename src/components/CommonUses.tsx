@@ -4,12 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Users, Handshake, TrendingUp, BookOpen, Globe, FileText, DollarSign, Percent } from "lucide-react";
 
 const UseCard = ({ icon: Icon, title }: { icon: React.ElementType, title: string }) => (
-  <Card className="bg-gradient-to-br from-gray-900 to-gray-800 text-white border-0 transform transition-all duration-300 hover:scale-105">
+  <Card className="bg-white border border-gray-200 shadow-sm transform transition-all duration-300 hover:shadow-md">
     <CardContent className="p-6 flex items-center space-x-4">
-      <div className="rounded-full p-2 bg-blue-500/10">
-        <Icon className="h-6 w-6 text-blue-400" />
+      <div className="rounded-full p-2 bg-rocket-50">
+        <Icon className="h-6 w-6 text-rocket-600" />
       </div>
-      <h3 className="text-lg font-medium">{title}</h3>
+      <h3 className="text-lg font-medium text-gray-800">{title}</h3>
     </CardContent>
   </Card>
 );
@@ -27,13 +27,13 @@ const CommonUses = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Common Uses for GrowthRocket
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             App developers use GrowthRocket for financing in lieu of and alongside other funding to supercharge growth.
           </p>
         </div>
