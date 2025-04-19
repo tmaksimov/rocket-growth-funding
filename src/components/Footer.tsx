@@ -1,5 +1,8 @@
+
 import React from "react";
+import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+
 const Footer = () => {
   return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-16">
@@ -44,8 +47,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">Resources</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
+              <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-use" className="hover:text-white transition">Terms of Service</Link></li>
               <li><a href="#" className="hover:text-white transition">Blog</a></li>
               <li><a href="#" className="hover:text-white transition">Careers</a></li>
             </ul>
