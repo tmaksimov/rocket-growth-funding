@@ -123,7 +123,6 @@ const FundingCalculator: React.FC<CalculatorProps> = ({ openContactForm }) => {
                     <div key={index} className="flex justify-between items-center">
                       <div>
                         <div className="font-medium">{payment.date}</div>
-                        <div className="text-sm text-gray-500">{payment.percentage}% of principal</div>
                       </div>
                       <div className="font-semibold">${formatNumber(payment.amount)}</div>
                     </div>
