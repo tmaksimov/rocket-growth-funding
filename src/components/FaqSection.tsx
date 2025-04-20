@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Accordion,
@@ -26,12 +27,7 @@ const FaqSection = () => {
     },
     {
       question: "How is GrowthRocket different from banks or traditional lenders?",
-      answer: "✅ No credit checks\
-        ✅ No collaterals\
-        ✅ Fully automated decisions\
-        ✅ Revenue-based repayment (flexible cash flows)\
-        ✅ Fast payouts
-        ✅ Works natively with App Store, Google Play, ad networks, and analytics tools"
+      answer: "✅ No credit checks\n✅ No collaterals\n✅ Fully automated decisions\n✅ Revenue-based repayment (flexible cash flows)\n✅ Fast payouts\n✅ Works natively with App Store, Google Play, ad networks, and analytics tools"
     },
     {
       question: "When will I receive my funding?",
@@ -77,7 +73,9 @@ const FaqSection = () => {
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 pb-4">
-                  {faq.answer}
+                  {faq.answer.split('\n').map((line, i) => (
+                    <div key={i}>{line}</div>
+                  ))}
                 </AccordionContent>
               </AccordionItem>
             ))}
