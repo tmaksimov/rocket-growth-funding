@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "./Logo";
 
 const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,16 +11,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
-            <svg 
-              viewBox="0 0 24 24" 
-              className="w-8 h-8 text-blue-600" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-            >
-              <path d="M12 2L4.5 9.5M12 2l7.5 7.5M12 2v8m0 0l-3-3m3 3l3-3M4.5 9.5V21l7.5-4.5 7.5 4.5V9.5M4.5 9.5L12 14m7.5-4.5L12 14" />
-            </svg>
-            <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
+            <Logo />
           </a>
         </div>
         
