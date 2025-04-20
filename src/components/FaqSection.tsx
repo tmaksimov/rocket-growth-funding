@@ -10,11 +10,11 @@ const FaqSection = () => {
   const faqs = [
     {
       question: "What is GrowthRocket?",
-      answer: "GrowthRocket is a fintech platform delivering embedded capital solutions for developers of mobile apps, games, and subscription-based businesses. We connect directly to real-time revenue sources like Stripe, Apple, Google, and ad networks—making funding decisions seamless, fast, and data-driven."
+      answer: "GrowthRocket is a fintech platform delivering capital solutions for developers of mobile apps, games, and subscription-based businesses. We connect directly to real-time revenue sources like Apple, Google, Stripe and ad networks—making funding decisions seamless, fast, and data-driven."
     },
     {
       question: "Why should I use your funding?",
-      answer: "We're founders too — we understand the cashflow pain. No equity. No delays. No BS. Just fast, predictable capital. Our capital directly into your platform gives your users fast, frictionless access to funding exactly where they operate. It drives higher retention, improves user satisfaction, and helps your customers grow revenue and increase payment volume—all while generating a new revenue stream for you."
+      answer: "We're founders too — we understand the cashflow pain. No equity. No delays. No BS. Just fast, predictable capital. We give you fast, frictionless access to funding exactly when you need it. It drives higher retention, improves user satisfaction, and helps your customers grow revenue and increase payment volume—all while generating a new revenue stream for you."
     },
     {
       question: "Am I eligible for funding?",
@@ -26,7 +26,12 @@ const FaqSection = () => {
     },
     {
       question: "How is GrowthRocket different from banks or traditional lenders?",
-      answer: "✅ No credit checks\n✅ No collaterals\n✅ Fully automated decisions\n✅ Revenue-based repayment (flexible cash flows)\n✅ Fast payouts\n✅ Works natively with App Store, Google Play, ad networks, and analytics tools"
+      answer: "✅ No credit checks\
+        ✅ No collaterals\
+        ✅ Fully automated decisions\
+        ✅ Revenue-based repayment (flexible cash flows)\
+        ✅ Fast payouts
+        ✅ Works natively with App Store, Google Play, ad networks, and analytics tools"
     },
     {
       question: "When will I receive my funding?",
@@ -34,7 +39,7 @@ const FaqSection = () => {
     },
     {
       question: "How do repayments work?",
-      answer: "Repayments are based on your receivables. We get paid everytime you store pays you."
+      answer: "Repayments are based on your receivables. We get paid everytime your store pays you, so you can stay focused on your product. "
     },
     {
       question: "How do I apply for funding?",
