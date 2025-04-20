@@ -17,7 +17,7 @@ const Footer = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 2L7 9.5M12 2l5 7.5M12 2v6.5m0 0l-2.5-2.5M12 8.5l2.5-2.5M7 9.5V20l5-3 5 3V9.5M7 9.5L12 12m5-2.5L12 12m0 5v-5" />
+                <path d="M12 2L8 9M12 2l4 7M12 2v5m0 0l-2-2M12 7l2-2M8 9v11l4-2 4 2V9M8 9l4 2 4-2" />
               </svg>
               <span className="text-xl font-bold text-white">GrowthRocket</span>
             </div>
@@ -56,8 +56,8 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
               <li><Link to="/terms-of-use" className="hover:text-white transition">Terms of Service</Link></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Careers</a></li>
+              <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
+              <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
             </ul>
           </div>
           

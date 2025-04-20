@@ -1,7 +1,7 @@
-
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 2L7 9.5M12 2l5 7.5M12 2v6.5m0 0l-2.5-2.5M12 8.5l2.5-2.5M7 9.5V20l5-3 5 3V9.5M7 9.5L12 12m5-2.5L12 12m0 5v-5" />
+              <path d="M12 2L8 9M12 2l4 7M12 2v5m0 0l-2-2M12 7l2-2M8 9v11l4-2 4 2V9M8 9l4 2 4-2" />
             </svg>
             <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
           </a>
@@ -31,6 +31,8 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
           <a href="#calculator" className="text-gray-700 hover:text-rocket-600 transition">Calculator</a>
           <a href="#how-it-works" className="text-gray-700 hover:text-rocket-600 transition">How It Works</a>
           <a href="#faq" className="text-gray-700 hover:text-rocket-600 transition">FAQ</a>
+          <Link to="/blog" className="text-gray-700 hover:text-rocket-600 transition">Blog</Link>
+          <Link to="/careers" className="text-gray-700 hover:text-rocket-600 transition">Careers</Link>
         </nav>
         
         <div className="hidden md:block">
@@ -81,6 +83,20 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
             >
               FAQ
             </a>
+            <Link 
+              to="/blog" 
+              className="text-gray-700 hover:text-rocket-600 transition py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/careers" 
+              className="text-gray-700 hover:text-rocket-600 transition py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Careers
+            </Link>
             <Button 
               onClick={() => {
                 openContactForm();

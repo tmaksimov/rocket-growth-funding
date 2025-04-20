@@ -119,13 +119,26 @@ const QualifySection: React.FC<QualifyProps> = ({
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4">Supported Platforms:</h3>
               <div className="flex flex-wrap gap-4">
-                {platforms.map((platform, index) => <div key={index} className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
-                    <div className="w-6 h-6 flex items-center justify-center mr-2">
-                      {/* Simplified logo placeholders */}
-                      <div className="w-4 h-4 rounded-full bg-gray-300"></div>
-                    </div>
+                {[
+                  { name: "Apple App Store", logo: "apple-logo.png" },
+                  { name: "Google Play", logo: "google-play-logo.png" },
+                  { name: "Unity Ads", logo: "unity-logo.png" },
+                  { name: "Meta", logo: "meta-logo.png" },
+                  { name: "AppLovin", logo: "applovin-logo.png" }
+                ].map((platform, index) => (
+                  <div key={index} className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                    <img 
+                      src={`/lovable-uploads/${index === 0 ? 'c4b14dd6-3767-4d5d-a76e-f1e5ab9f13ea.png' : 
+                            index === 1 ? 'b71f6c35-0ac6-478b-a1cf-f201557f4835.png' :
+                            index === 2 ? 'a709a3d7-c17a-4f8d-a2a7-487818570e71.png' :
+                            index === 3 ? 'cddd8f16-1b5c-453e-b7d1-9aa0419fcdbf.png' :
+                            '99236149-0922-4353-b2a8-48108bedf6e2.png'}`} 
+                      alt={platform.name}
+                      className="w-6 h-6 object-contain mr-2"
+                    />
                     <span className="text-sm font-medium">{platform.name}</span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
