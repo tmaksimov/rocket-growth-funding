@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -15,23 +14,7 @@ const QualifySection: React.FC<QualifyProps> = ({
   openContactForm
 }) => {
   const requirements = ["Revenue from $30K/month", "Minimum 6 months of operations", "Available receivables in any platform"];
-  const platforms = [{
-    name: "Apple App Store",
-    logo: "apple"
-  }, {
-    name: "Google Play",
-    logo: "google-play"
-  }, {
-    name: "Unity Ads",
-    logo: "unity"
-  }, {
-    name: "Meta",
-    logo: "meta"
-  }, {
-    name: "AppLovin",
-    logo: "applovin"
-  }];
-
+  
   // State for calculator
   const [amount, setAmount] = useState<string>("10000");
   const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
@@ -101,7 +84,7 @@ const QualifySection: React.FC<QualifyProps> = ({
     }
   };
 
-  return <div className="py-16 bg-gray-50">
+  return <div className="py-16 bg-gray-50" id="calculator">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -119,26 +102,21 @@ const QualifySection: React.FC<QualifyProps> = ({
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4">Supported Platforms:</h3>
               <div className="flex flex-wrap gap-4">
-                {[
-                  { name: "Apple App Store", logo: "apple-logo.png" },
-                  { name: "Google Play", logo: "google-play-logo.png" },
-                  { name: "Unity Ads", logo: "unity-logo.png" },
-                  { name: "Meta", logo: "meta-logo.png" },
-                  { name: "AppLovin", logo: "applovin-logo.png" }
-                ].map((platform, index) => (
-                  <div key={index} className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
-                    <img 
-                      src={`/lovable-uploads/${index === 0 ? 'c4b14dd6-3767-4d5d-a76e-f1e5ab9f13ea.png' : 
-                            index === 1 ? 'b71f6c35-0ac6-478b-a1cf-f201557f4835.png' :
-                            index === 2 ? 'a709a3d7-c17a-4f8d-a2a7-487818570e71.png' :
-                            index === 3 ? 'cddd8f16-1b5c-453e-b7d1-9aa0419fcdbf.png' :
-                            '99236149-0922-4353-b2a8-48108bedf6e2.png'}`} 
-                      alt={platform.name}
-                      className="w-6 h-6 object-contain mr-2"
-                    />
-                    <span className="text-sm font-medium">{platform.name}</span>
-                  </div>
-                ))}
+                <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                  <span className="text-sm font-medium">Apple App Store</span>
+                </div>
+                <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                  <span className="text-sm font-medium">Google Play</span>
+                </div>
+                <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                  <span className="text-sm font-medium">Unity Ads</span>
+                </div>
+                <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                  <span className="text-sm font-medium">Meta</span>
+                </div>
+                <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                  <span className="text-sm font-medium">AppLovin</span>
+                </div>
               </div>
             </div>
           </div>

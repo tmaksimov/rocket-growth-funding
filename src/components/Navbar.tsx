@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,9 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 2L8 9M12 2l4 7M12 2v5m0 0l-2-2M12 7l2-2M8 9v11l4-2 4 2V9M8 9l4 2 4-2" />
+              <path d="M4.5 16.5c0-1.5 2-2.5 2-2.5l1.5-4.5m0 0L6.5 6c-.5-1.5.5-2 1-2s1.5 0 2 2l1 3.5" />
+              <path d="M9.5 9.5L11 13c.5 1.5 1.5 2 2.5 0L17 3.5" />
+              <path d="M14 15.5c2-1 4 .5 4 2.5v1c0 1-1 2-2 2s-5-1-5-4" />
             </svg>
             <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
           </a>
