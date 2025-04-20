@@ -38,22 +38,22 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 const TrustSection = () => {
   const testimonials: Testimonial[] = [
     {
-      quote: "GrowthRocket has been instrumental in scaling our user base. Their funding solution is tailored for app developers.",
-      company: "Mighty Games",
-      url: "https://github.com/mightygames",
+      quote: "We needed more funds for user acquisition and CAPEX. GrowthRocket structured a solution that kept our growth dynamiс without sacrificing equity",
+      company: "JET Sharing",
+      url: "https://jetshr.com/",
       name: "Alex"
     },
     {
-      quote: "We were able to double our marketing spend and saw immediate results. GrowthRocket understands the app business.",
-      company: "Nova Labs",
-      url: "https://github.com/novalabs",
-      name: "Sarah"
+      quote: "GrowthRocket help and offer really the most favorable rates and conditions, anticipating wishes..",
+      company: "Twinby",
+      url: "https://twinby.com",
+      name: "Nika"
     },
     {
       quote: "The process was incredibly fast and straightforward. GrowthRocket provided the capital we needed to launch our new feature.",
       company: "Pixel Push",
-      url: "https://github.com/pixelpush",
-      name: "Emily"
+      url: "https://pixelpush.com/pixelpush",
+      name: "Andrew"
     }
   ];
 
