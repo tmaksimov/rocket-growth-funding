@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
@@ -9,8 +8,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <svg viewBox="0 0 24 24" className="w-8 h-8 text-white mr-2" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2L4.5 9.5M12 2l7.5 7.5M12 2v8m0 0l-3-3m3 3l3-3M4.5 9.5V21l7.5-4.5 7.5 4.5V9.5M4.5 9.5L12 14m7.5-4.5L12 14" />
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-8 h-8 text-white mr-2" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 2L7 9.5M12 2l5 7.5M12 2v6.5m0 0l-2.5-2.5M12 8.5l2.5-2.5M7 9.5V20l5-3 5 3V9.5M7 9.5L12 12m5-2.5L12 12m0 5v-5" />
               </svg>
               <span className="text-xl font-bold text-white">GrowthRocket</span>
             </div>
@@ -77,4 +84,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
