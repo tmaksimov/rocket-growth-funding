@@ -7,31 +7,44 @@ import { Link } from "react-router-dom";
 const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Helper to smoothly scroll to the calculator
+  const handleCalculatorClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const section = document.getElementById("qualify");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
-            <svg 
-              viewBox="0 0 24 24" 
-              className="w-8 h-8 text-blue-600" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            <img
+              src="/lovable-uploads/be1a9660-07dd-4f94-83a6-4d6eab0cb9d1.png"
+              alt="GrowthRocket Logo"
+              className="w-8 h-8 object-contain"
+              style={{ minWidth: 32 }}
+            />
+            <span
+              className="text-xl font-bold"
+              style={{
+                background: "linear-gradient(90deg, #2496F8 30%, #2074D4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text"
+              }}
             >
-              <path d="M4.5 16.5c0-1.5 2-2.5 2-2.5l1.5-4.5m0 0L6.5 6c-.5-1.5.5-2 1-2s1.5 0 2 2l1 3.5" />
-              <path d="M9.5 9.5L11 13c.5 1.5 1.5 2 2.5 0L17 3.5" />
-              <path d="M14 15.5c2-1 4 .5 4 2.5v1c0 1-1 2-2 2s-5-1-5-4" />
-            </svg>
-            <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
+              GrowthRocket
+            </span>
           </a>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#why-us" className="text-gray-700 hover:text-rocket-600 transition">Why Us</a>
-          <a href="#calculator" className="text-gray-700 hover:text-rocket-600 transition">Calculator</a>
+          <a href="#qualify" className="text-gray-700 hover:text-rocket-600 transition" onClick={handleCalculatorClick}>Calculator</a>
           <a href="#how-it-works" className="text-gray-700 hover:text-rocket-600 transition">How It Works</a>
           <a href="#faq" className="text-gray-700 hover:text-rocket-600 transition">FAQ</a>
           <Link to="/blog" className="text-gray-700 hover:text-rocket-600 transition">Blog</Link>
@@ -66,9 +79,9 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
               Why Us
             </a>
             <a 
-              href="#calculator" 
+              href="#qualify" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={handleCalculatorClick}
             >
               Calculator
             </a>
