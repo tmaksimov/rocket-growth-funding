@@ -9,7 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-             
+             <img 
+  public="/GRLogo.png" 
+  alt="GrowthRocket Logo" 
+  className="h-8 w-auto"
+/>
               <span className="text-xl font-bold text-white">GrowthRocket</span>
             </div>
             <p className="mb-6">
