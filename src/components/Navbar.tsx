@@ -11,7 +11,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-extrabold text-blue-800 tracking-tight">GrowthRocket</span>
+           <img src="/GRlogo.png" alt="GrowthRocket Logo" className="h-8 w-auto" />
           </a>
         </div>
         
