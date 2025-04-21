@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,20 +11,7 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
-            <svg 
-              viewBox="0 0 24 24" 
-              className="w-8 h-8 text-blue-600" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4.5 16.5c0-1.5 2-2.5 2-2.5l1.5-4.5m0 0L6.5 6c-.5-1.5.5-2 1-2s1.5 0 2 2l1 3.5" />
-              <path d="M9.5 9.5L11 13c.5 1.5 1.5 2 2.5 0L17 3.5" />
-              <path d="M14 15.5c2-1 4 .5 4 2.5v1c0 1-1 2-2 2s-5-1-5-4" />
-            </svg>
-            <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
+            <span className="text-2xl font-extrabold text-blue-800 tracking-tight">GrowthRocket</span>
           </a>
         </div>
         
@@ -34,8 +20,6 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
           <a href="#calculator" className="text-gray-700 hover:text-rocket-600 transition">Calculator</a>
           <a href="#how-it-works" className="text-gray-700 hover:text-rocket-600 transition">How It Works</a>
           <a href="#faq" className="text-gray-700 hover:text-rocket-600 transition">FAQ</a>
-          <Link to="/blog" className="text-gray-700 hover:text-rocket-600 transition">Blog</Link>
-          <Link to="/careers" className="text-gray-700 hover:text-rocket-600 transition">Careers</Link>
         </nav>
         
         <div className="hidden md:block">
@@ -86,20 +70,6 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
             >
               FAQ
             </a>
-            <Link 
-              to="/blog" 
-              className="text-gray-700 hover:text-rocket-600 transition py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link 
-              to="/careers" 
-              className="text-gray-700 hover:text-rocket-600 transition py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Careers
-            </Link>
             <Button 
               onClick={() => {
                 openContactForm();
@@ -117,3 +87,4 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
 };
 
 export default Navbar;
+
