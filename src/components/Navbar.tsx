@@ -7,144 +7,100 @@ import { Link } from "react-router-dom";
 const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Helper to smoothly scroll to the calculator
-  const handleCalculatorClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    const section = document.getElementById("qualify");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
-            <img
-              src="/lovable-uploads/e92a038e-ae49-496e-81a5-bc8b9bc7c45d.png"
-              alt="GrowthRocket Logo"
-              className="h-8 w-auto object-contain"
-              style={{ minWidth: 32 }}
-            />
-            <span
-              className="font-bold text-2xl text-[#1e40af]"
-              style={{
-                fontFamily:
-                  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen",
-              }}
+            <svg 
+              viewBox="0 0 24 24" 
+              className="w-8 h-8 text-blue-600" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              GrowthRocket
-            </span>
+              <path d="M4.5 16.5c0-1.5 2-2.5 2-2.5l1.5-4.5m0 0L6.5 6c-.5-1.5.5-2 1-2s1.5 0 2 2l1 3.5" />
+              <path d="M9.5 9.5L11 13c.5 1.5 1.5 2 2.5 0L17 3.5" />
+              <path d="M14 15.5c2-1 4 .5 4 2.5v1c0 1-1 2-2 2s-5-1-5-4" />
+            </svg>
+            <span className="text-xl font-bold text-blue-800">GrowthRocket</span>
           </a>
         </div>
-
+        
         <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#why-us"
-            className="text-gray-700 hover:text-rocket-600 transition"
-          >
-            Why Us
-          </a>
-          <a
-            href="#qualify"
-            className="text-gray-700 hover:text-rocket-600 transition"
-            onClick={handleCalculatorClick}
-          >
-            Calculator
-          </a>
-          <a
-            href="#how-it-works"
-            className="text-gray-700 hover:text-rocket-600 transition"
-          >
-            How It Works
-          </a>
-          <a
-            href="#faq"
-            className="text-gray-700 hover:text-rocket-600 transition"
-          >
-            FAQ
-          </a>
-          <Link
-            to="/blog"
-            className="text-gray-700 hover:text-rocket-600 transition"
-          >
-            Blog
-          </Link>
-          <Link
-            to="/careers"
-            className="text-gray-700 hover:text-rocket-600 transition"
-          >
-            Careers
-          </Link>
+          <a href="#why-us" className="text-gray-700 hover:text-rocket-600 transition">Why Us</a>
+          <a href="#calculator" className="text-gray-700 hover:text-rocket-600 transition">Calculator</a>
+          <a href="#how-it-works" className="text-gray-700 hover:text-rocket-600 transition">How It Works</a>
+          <a href="#faq" className="text-gray-700 hover:text-rocket-600 transition">FAQ</a>
+          <Link to="/blog" className="text-gray-700 hover:text-rocket-600 transition">Blog</Link>
+          <Link to="/careers" className="text-gray-700 hover:text-rocket-600 transition">Careers</Link>
         </nav>
-
+        
         <div className="hidden md:block">
-          <Button
+          <Button 
             onClick={openContactForm}
             className="bg-blue-500 hover:bg-blue-600 text-white"
           >
             Get Funded
           </Button>
         </div>
-
-        <button
-          className="md:hidden text-gray-700"
+        
+        <button 
+          className="md:hidden text-gray-700" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
+      
       {isMenuOpen && (
         <div className="md:hidden bg-white py-4 px-4 shadow-md">
           <nav className="flex flex-col space-y-4">
-            <a
-              href="#why-us"
+            <a 
+              href="#why-us" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Why Us
             </a>
-            <a
-              href="#qualify"
+            <a 
+              href="#calculator" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
-              onClick={handleCalculatorClick}
+              onClick={() => setIsMenuOpen(false)}
             >
               Calculator
             </a>
-            <a
-              href="#how-it-works"
+            <a 
+              href="#how-it-works" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </a>
-            <a
-              href="#faq"
+            <a 
+              href="#faq" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
             </a>
-            <Link
-              to="/blog"
+            <Link 
+              to="/blog" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
-            <Link
-              to="/careers"
+            <Link 
+              to="/careers" 
               className="text-gray-700 hover:text-rocket-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Careers
             </Link>
-            <Button
+            <Button 
               onClick={() => {
                 openContactForm();
                 setIsMenuOpen(false);
@@ -161,4 +117,3 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
 };
 
 export default Navbar;
-
