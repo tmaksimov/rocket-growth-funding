@@ -23,22 +23,11 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
         <div className="flex items-center">
           <a href="/" className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/be1a9660-07dd-4f94-83a6-4d6eab0cb9d1.png"
+              src="/lovable-uploads/e92a038e-ae49-496e-81a5-bc8b9bc7c45d.png"
               alt="GrowthRocket Logo"
-              className="w-8 h-8 object-contain"
+              className="h-8 w-auto object-contain"
               style={{ minWidth: 32 }}
             />
-            <span
-              className="text-xl font-bold"
-              style={{
-                background: "linear-gradient(90deg, #2496F8 30%, #2074D4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text"
-              }}
-            >
-              GrowthRocket
-            </span>
           </a>
         </div>
         
@@ -130,3 +119,4 @@ const Navbar = ({ openContactForm }: { openContactForm: () => void }) => {
 };
 
 export default Navbar;
+
