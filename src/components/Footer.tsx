@@ -5,7 +5,9 @@ import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   // Helper to smoothly scroll to the calculator section
-  const handleCalculatorClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleCalculatorClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     e.preventDefault();
     const section = document.getElementById("qualify");
     if (section) {
@@ -18,17 +20,26 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 gap-2">
               <img
                 src="/lovable-uploads/e92a038e-ae49-496e-81a5-bc8b9bc7c45d.png"
                 alt="GrowthRocket Logo"
-                className="w-32 h-auto object-contain mr-2"
-                style={{ minWidth: 32 }}
+                className="w-16 h-auto object-contain"
+                style={{ minWidth: 64 }}
               />
+              <span
+                className="font-bold text-3xl text-[#1e40af]"
+                style={{
+                  fontFamily:
+                    "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen",
+                }}
+              >
+                GrowthRocket
+              </span>
             </div>
             <p className="mb-6">
-              Fast and flexible funding for app and game developers. 
-              Get the capital you need to grow your business.
+              Fast and flexible funding for app and game developers. Get the
+              capital you need to grow your business.
             </p>
             <div className="flex space-x-4">
               {/* Add social links if needed, left blank for now except for LinkedIn */}
@@ -40,38 +51,73 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-4">
-              <li><a href="#why-us" className="hover:text-white transition">Why Us</a></li>
+              <li>
+                <a href="#why-us" className="hover:text-white transition">
+                  Why Us
+                </a>
+              </li>
               <li>
                 {/* Fix Calculator link to proper scroll */}
-                <a href="#qualify" className="hover:text-white transition" onClick={handleCalculatorClick}>
+                <a
+                  href="#qualify"
+                  className="hover:text-white transition"
+                  onClick={handleCalculatorClick}
+                >
                   Calculator
                 </a>
               </li>
-              <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
-              <li><a href="#faq" className="hover:text-white transition">FAQ</a></li>
+              <li>
+                <a href="#how-it-works" className="hover:text-white transition">
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-white transition">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">Resources</h3>
             <ul className="space-y-4">
-              <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-use" className="hover:text-white transition">Terms of Service</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-white transition">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-of-use" className="hover:text-white transition">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-white transition">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:text-white transition">
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-center">
                 <Mail size={18} className="mr-2" />
-                <a href="mailto:info@growthrocket.com" className="hover:text-white transition">
+                <a
+                  href="mailto:info@growthrocket.com"
+                  className="hover:text-white transition"
+                >
                   info@growthrocket.com
                 </a>
               </li>
@@ -79,7 +125,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} GrowthRocket. All rights reserved.</p>
         </div>
@@ -89,4 +135,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
