@@ -1,7 +1,7 @@
 
 # GrowthRocket - Funding for App & Game Developers
 
-GrowthRocket provides fast and flexible funding for app and game developers who need capital to scale their business quickly. This modern fintech platform offers receivables financing and factoring solutions.
+1GrowthRocket provides fast and flexible funding for app and game developers who need capital to scale their business quickly. This modern fintech platform offers receivables financing and factoring solutions.
 
 ## Features
 
