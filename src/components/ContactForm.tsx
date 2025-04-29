@@ -24,7 +24,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Get Funded!</DialogTitle>
+          <DialogTitle className="text-2xl font-bold">Get Funded!!!</DialogTitle>
           <DialogDescription>
             Tell us about your app or game and we'll get back to you with funding options.
           </DialogDescription>
